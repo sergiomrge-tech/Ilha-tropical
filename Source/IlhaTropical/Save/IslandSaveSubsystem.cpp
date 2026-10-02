@@ -1,6 +1,8 @@
 #include "Save/IslandSaveSubsystem.h"
 
+#include "Engine/World.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "Save/IslandSaveGame.h"
 
@@ -32,7 +34,7 @@ bool UIslandSaveSubsystem::SavePlayerState(APlayerController* PlayerController, 
 
     if (const UWorld* World = GetWorld())
     {
-        SaveObject->TotalPlaySeconds = World->GetTimeSeconds();
+        SaveObject->SessionPlaySecondsAtSave = World->GetTimeSeconds();
     }
 
     return UGameplayStatics::SaveGameToSlot(SaveObject, SlotName, UserIndex);
