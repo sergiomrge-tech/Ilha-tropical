@@ -10,8 +10,8 @@ A configuração fecha exatamente a resolução 4033:
 - Components: **32 x 32**
 - Total: **4032 x 4032 quads**
 - Vertices: **4033 x 4033**
-- XY Scale inicial: **110,916 cm**
-- dimensão nominal: **4472,14 m**
+- XY Scale inicial: **154,324 cm**
+- dimensão nominal do Landscape: **6222,345 m**
 - Z Scale inicial: **500**
 
 Com Z Scale 500, existe margem vertical suficiente para a montanha central alvo (~1120 m) sem comprimir demais o height range.
@@ -54,7 +54,7 @@ Ground cover e foliage pequeno devem resolver custo principalmente por instancin
 
 ## Validação obrigatória no Editor
 - Landscape importa como 32x32 components.
-- tamanho medido confere com ~4,47 km.
+- tamanho medido confere com ~6,22 km de Landscape e ~20 km² de área emersa.
 - personagem tem escala natural na praia.
 - streaming carrega/descarrega células sem buracos visíveis.
 - montanha permanece landmark sem obrigar conteúdo completo a ficar carregado.
