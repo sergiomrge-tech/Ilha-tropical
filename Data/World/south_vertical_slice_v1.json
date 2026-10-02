@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "engine_target": "5.8.3",
+  "terrain_version": "v3",
+  "coordinate_space": "Landscape-centered world coordinates in meters, approximate until Editor import",
+  "route": [
+    {
+      "id": "VS01",
+      "name": "Spawn / Praia",
+      "x_m": -167,
+      "y_m": -2811,
+      "elevation_m": [
+        3,
+        8
+      ],
+      "role": "start_open"
+    },
+    {
+      "id": "VS02",
+      "name": "Dunas / Transição",
+      "x_m": -111,
+      "y_m": -2532,
+      "elevation_m": [
+        10,
+        30
+      ],
+      "role": "transition"
+    },
+    {
+      "id": "VS03",
+      "name": "Mata Costeira",
+      "x_m": -167,
+      "y_m": -2157,
+      "elevation_m": [
+        30,
+        85
+      ],
+      "role": "compression"
+    },
+    {
+      "id": "VS04",
+      "name": "Riacho",
+      "x_m": -56,
+      "y_m": -1837,
+      "elevation_m": [
+        65,
+        105
+      ],
+      "role": "crossing"
+    },
+    {
+      "id": "VS05",
+      "name": "Floresta Fechada",
+      "x_m": 56,
+      "y_m": -1572,
+      "elevation_m": [
+        90,
+        145
+      ],
+      "role": "compression"
+    },
+    {
+      "id": "VS06",
+      "name": "Base da Cachoeira",
+      "x_m": 111,
+      "y_m": -1252,
+      "elevation_m": [
+        120,
+        170
+      ],
+      "role": "regional_landmark"
+    },
+    {
+      "id": "VS07",
+      "name": "Subida Rochosa",
+      "x_m": 264,
+      "y_m": -1057,
+      "elevation_m": [
+        170,
+        285
+      ],
+      "role": "vertical_traversal"
+    },
+    {
+      "id": "VS08",
+      "name": "Mirante",
+      "x_m": 362,
+      "y_m": -863,
+      "elevation_m": [
+        285,
+        340
+      ],
+      "role": "reveal"
+    }
+  ],
+  "visual_rhythm": [
+    "open",
+    "compressed",
+    "semi_open",
+    "compressed",
+    "landmark",
+    "vertical_climb",
+    "large_reveal"
+  ],
+  "rules": {
+    "main_route_must_remain_clear": true,
+    "no_invisible_wall_dependency": true,
+    "pcg_exclusion_required": true,
+    "secondary_routes_required": true
+  }
+}
