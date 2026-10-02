@@ -1,7 +1,13 @@
 #include "World/IslandRegionVolume.h"
 
+#include "Components/BrushComponent.h"
+
 AIslandRegionVolume::AIslandRegionVolume()
 {
     SetActorEnableCollision(true);
-    GetBrushComponent()->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+
+    if (UBrushComponent* Brush = GetBrushComponent())
+    {
+        Brush->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+    }
 }
