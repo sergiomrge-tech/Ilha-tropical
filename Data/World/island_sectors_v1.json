@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "engine_target": "5.8.3",
+  "design_rules": {
+    "avoid_large_flat_areas": true,
+    "manual_level_design_after_pcg": true,
+    "required_route_types": ["primary", "secondary"],
+    "require_landmark_per_sector": true,
+    "require_poi_per_sector": true,
+    "require_visibility_rhythm": true
+  },
+  "sectors": [
+    {
+      "id": "S01",
+      "name": "Praia Inicial Sul",
+      "area_km2": 1.15,
+      "elevation_m": [0, 95],
+      "density": "medium",
+      "landmark": "enseada curva com afloramento rochoso",
+      "primary_route": "praia -> dunas -> mata",
+      "secondary_routes": ["costão leste", "gruta costeira", "atalho por pedras"],
+      "pois": ["gruta rasa", "mirante de costão", "nascente curta"],
+      "production_priority": 1
+    },
+    {
+      "id": "S02",
+      "name": "Mata Costeira Sul",
+      "area_km2": 1.35,
+      "elevation_m": [35, 230],
+      "density": "high",
+      "landmark": "árvore monumental em clareira",
+      "primary_route": "trilha sinuosa rumo ao rio",
+      "secondary_routes": ["ravina rasa", "trilha alta", "passagem sob raízes"],
+      "pois": ["clareira", "poço natural", "ponte de árvore caída"],
+      "production_priority": 1
+    },
+    {
+      "id": "S03",
+      "name": "Rio e Cachoeira Sul",
+      "area_km2": 1.10,
+      "elevation_m": [70, 360],
+      "density": "high",
+      "landmark": "cachoeira principal do vertical slice",
+      "primary_route": "margem sul -> travessia -> base da cachoeira",
+      "secondary_routes": ["margem elevada", "pedras de travessia", "caverna lateral"],
+      "pois": ["piscina natural", "queda secundária", "mirante intermediário"],
+      "production_priority": 1
+    },
+    {
+      "id": "S04",
+      "name": "Vale Interior",
+      "area_km2": 2.15,
+      "elevation_m": [120, 410],
+      "density": "medium",
+      "landmark": "vale aberto enquadrando a montanha",
+      "primary_route": "corredor natural sul-norte",
+      "secondary_routes": ["terraço oeste", "leito seco", "trilha de encosta"],
+      "pois": ["lagoa interior", "arco de pedra", "bosque isolado"],
+      "production_priority": 2
+    },
+    {
+      "id": "S05",
+      "name": "Selva Profunda Oeste",
+      "area_km2": 2.65,
+      "elevation_m": [160, 590],
+      "density": "very_high",
+      "landmark": "árvores antigas e cânion úmido",
+      "primary_route": "trilha fechada entre raízes e rochas",
+      "secondary_routes": ["córrego oculto", "rota elevada", "passagem de cânion"],
+      "pois": ["gruta úmida", "árvore colossal", "lago escondido"],
+      "production_priority": 3
+    },
+    {
+      "id": "S06",
+      "name": "Manguezal Sudoeste",
+      "area_km2": 1.40,
+      "elevation_m": [-2, 65],
+      "density": "high",
+      "landmark": "lagoa salobra cercada por raízes",
+      "primary_route": "faixa seca sinuosa",
+      "secondary_routes": ["passagem rasa", "costão", "canal de maré"],
+      "pois": ["ilha de raízes", "gruta de maré", "mirante baixo"],
+      "production_priority": 4
+    },
+    {
+      "id": "S07",
+      "name": "Cachoeiras do Leste",
+      "area_km2": 1.85,
+      "elevation_m": [90, 620],
+      "density": "high",
+      "landmark": "sequência de quedas d'água",
+      "primary_route": "subida acompanhando o rio",
+      "secondary_routes": ["paredão lateral", "ponte natural", "rota por caverna"],
+      "pois": ["poço profundo", "câmara rochosa", "mirante das quedas"],
+      "production_priority": 3
+    },
+    {
+      "id": "S08",
+      "name": "Falésias Norte",
+      "area_km2": 2.05,
+      "elevation_m": [15, 470],
+      "density": "medium",
+      "landmark": "muralha natural sobre o oceano",
+      "primary_route": "trilha de topo",
+      "secondary_routes": ["praia isolada", "fenda de rocha", "descida por terraços"],
+      "pois": ["arco costeiro", "caverna marinha", "ponta panorâmica"],
+      "production_priority": 4
+    },
+    {
+      "id": "S09",
+      "name": "Contrafortes da Montanha",
+      "area_km2": 2.10,
+      "elevation_m": [300, 820],
+      "density": "high",
+      "landmark": "paredões e cristas radiais",
+      "primary_route": "subida em zigue-zague",
+      "secondary_routes": ["ravina", "crista", "túnel natural"],
+      "pois": ["platô", "fenda vertical", "nascente alta"],
+      "production_priority": 5
+    },
+    {
+      "id": "S10",
+      "name": "Montanha Central",
+      "area_km2": 2.35,
+      "elevation_m": [620, 1120],
+      "density": "low_to_medium",
+      "landmark": "cume principal",
+      "primary_route": "rota de ascensão sul",
+      "secondary_routes": ["crista leste", "passagem oeste", "caverna de altitude"],
+      "pois": ["cume", "platô nebuloso", "mirante 360"],
+      "production_priority": 5
+    },
+    {
+      "id": "S11",
+      "name": "Costa Nordeste",
+      "area_km2": 1.05,
+      "elevation_m": [0, 210],
+      "density": "medium",
+      "landmark": "recifes e pedras monolíticas",
+      "primary_route": "faixa costeira quebrada",
+      "secondary_routes": ["enseada", "trilha de falésia", "passagem por rochas"],
+      "pois": ["piscina de maré", "gruta", "ilha acessível"],
+      "production_priority": 6
+    },
+    {
+      "id": "S12",
+      "name": "Ilhotas e Recifes",
+      "area_km2": 0.80,
+      "elevation_m": [-5, 85],
+      "density": "low_to_medium",
+      "landmark": "cadeia de pequenas ilhas",
+      "primary_route": "navegação futura",
+      "secondary_routes": ["recifes rasos", "praias isoladas"],
+      "pois": ["gruta insular", "recife", "praia escondida"],
+      "production_priority": 6
+    }
+  ]
+}
