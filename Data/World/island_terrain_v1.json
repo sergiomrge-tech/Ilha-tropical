@@ -1,16 +1,16 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "engine_target": "5.8.3",
   "world": {
-    "target_area_km2": 20.0,
+    "target_area_km2": 20,
     "nominal_width_m": 4472.14,
     "nominal_length_m": 4472.14,
     "heightmap_resolution": 4033,
     "landscape_quads": 4032,
     "xy_scale_cm": 110.916,
-    "z_scale": 500.0,
-    "sea_level_m": 0.0,
-    "mountain_target_m": 1120.0
+    "z_scale": 500,
+    "sea_level_m": 0,
+    "mountain_target_m": 1100
   },
   "landscape": {
     "world_partition": true,
@@ -20,14 +20,66 @@
     "hlod": true
   },
   "regions": [
-    {"id":"south_beach","name":"Praia Inicial","quadrant":"south","priority":1},
-    {"id":"south_coastal_forest","name":"Mata Costeira Sul","quadrant":"south","priority":1},
-    {"id":"central_valley","name":"Vale Interior","quadrant":"center","priority":2},
-    {"id":"west_jungle","name":"Selva Profunda Oeste","quadrant":"west","priority":3},
-    {"id":"east_falls","name":"Cachoeiras do Leste","quadrant":"east","priority":3},
-    {"id":"north_cliffs","name":"Falésias do Norte","quadrant":"north","priority":4},
-    {"id":"southwest_mangrove","name":"Manguezal Sudoeste","quadrant":"southwest","priority":4},
-    {"id":"central_mountain","name":"Montanha Central","quadrant":"center","priority":5},
-    {"id":"caves","name":"Sistema de Cavernas","quadrant":"distributed","priority":6}
+    {
+      "id": "south_beach",
+      "name": "Praia Inicial",
+      "quadrant": "south",
+      "priority": 1
+    },
+    {
+      "id": "south_coastal_forest",
+      "name": "Mata Costeira Sul",
+      "quadrant": "south",
+      "priority": 1
+    },
+    {
+      "id": "central_valley",
+      "name": "Vale Interior",
+      "quadrant": "center",
+      "priority": 2
+    },
+    {
+      "id": "west_jungle",
+      "name": "Selva Profunda Oeste",
+      "quadrant": "west",
+      "priority": 3
+    },
+    {
+      "id": "east_falls",
+      "name": "Cachoeiras do Leste",
+      "quadrant": "east",
+      "priority": 3
+    },
+    {
+      "id": "north_cliffs",
+      "name": "Falésias do Norte",
+      "quadrant": "north",
+      "priority": 4
+    },
+    {
+      "id": "southwest_mangrove",
+      "name": "Manguezal Sudoeste",
+      "quadrant": "southwest",
+      "priority": 4
+    },
+    {
+      "id": "central_mountain",
+      "name": "Montanha Central",
+      "quadrant": "center",
+      "priority": 5
+    },
+    {
+      "id": "caves",
+      "name": "Sistema de Cavernas",
+      "quadrant": "distributed",
+      "priority": 6
+    }
+  ],
+  "generator_algorithm_version": 2,
+  "design_notes": [
+    "Costa propositalmente assimetrica com enseadas e peninsulas.",
+    "Maciço central multi-pico para evitar leitura radial/volcanica simples.",
+    "Rios base usam corredores curvos e serao refinados por Water splines.",
+    "Heightmap e macro-base; level design final exige passe manual."
   ]
 }
