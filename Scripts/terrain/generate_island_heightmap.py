@@ -21,9 +21,9 @@ except ImportError as exc:
     ) from exc
 
 DEFAULT_RESOLUTION = 4033
-DEFAULT_WIDTH_M = 4472.14
+DEFAULT_WIDTH_M = 6222.345
 DEFAULT_Z_SCALE = 500.0
-ALGORITHM_VERSION = 2
+ALGORITHM_VERSION = 3
 
 
 def smoothstep(edge0: float, edge1: float, x):
@@ -174,7 +174,7 @@ def build_heightfield(resolution: int, seed: int):
     # Ocean base.
     height = np.where(island_mask < 0.08, -18.0, height)
 
-    # Defensive clamp only; algorithm v2 should naturally stay below the upper cap.
+    # Defensive clamp only; the terrain should naturally stay below the upper cap.
     return np.clip(height, -120.0, 1200.0).astype(np.float32)
 
 
@@ -215,11 +215,17 @@ def main():
     write_r16(args.out, raw)
     write_preview_pgm(args.preview, height)
 
+    land_fraction = float((height > 0.0).mean())
+    estimated_land_area_km2 = land_fraction * (DEFAULT_WIDTH_M ** 2) / 1_000_000.0
+
     metadata = {
         "engine_target": "5.8.3",
         "algorithm_version": ALGORITHM_VERSION,
         "resolution": args.resolution,
         "seed": args.seed,
+        "target_land_area_km2": 20.0,
+        "estimated_land_area_km2": estimated_land_area_km2,
+        "land_fraction_of_landscape": land_fraction,
         "nominal_width_m": DEFAULT_WIDTH_M,
         "xy_scale_cm_for_4033": round(DEFAULT_WIDTH_M * 100.0 / (DEFAULT_RESOLUTION - 1), 3),
         "z_scale": args.z_scale,
@@ -231,7 +237,7 @@ def main():
         "notes": [
             "Macro-terrain only; manual Landmass/Landscape pass is required.",
             "Set WaterBodyOcean around 0m.",
-            "Algorithm v2 uses asymmetric coastline, multi-peak massif and curved drainage.",
+            "Algorithm v3 preserves the v2 shape but scales the Landscape so emerged land is approximately 20 km2.",
             "Do not commit Generated/ unless intentionally preserving generated assets."
         ],
     }
