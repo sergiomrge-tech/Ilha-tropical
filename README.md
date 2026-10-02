@@ -1,21 +1,48 @@
 # Ilha Tropical
 
-Projeto Unreal Engine 5.8 em terceira pessoa, desenvolvido com GitHub como fonte de verdade.
+Jogo de exploração em terceira pessoa para **PC**, desenvolvido em Unreal Engine 5.8 e versionado pelo GitHub.
 
 ## Conceito
 
-Mundo aberto em uma ilha tropical deserta de aproximadamente **20 km²**, com uma grande montanha central visível de boa parte da costa.
+Mundo aberto em uma ilha tropical deserta de aproximadamente **20 km²**, extremamente rica em vegetação, relevo e exploração.
+
+Uma grande montanha central domina a paisagem e funciona como referência visual global.
+
+## Direção do mundo
+
+O objetivo não é criar apenas um terreno grande. A ilha será construída com level design detalhado:
+
+- praias irregulares;
+- selva densa;
+- rios;
+- cachoeiras;
+- ravinas;
+- falésias;
+- cavernas;
+- vales;
+- platôs;
+- trilhas naturais;
+- passagens escondidas;
+- mirantes;
+- rotas alternativas;
+- pontos de interesse.
+
+PCG será usado para acelerar a vegetação e composição, mas cada região importante receberá passe manual.
 
 ## Base técnica
 
 - Unreal Engine 5.8.x
-- C++ para sistemas centrais
+- PC / DirectX 12
+- C++
 - Landscape + Landmass
 - PCG
 - Water System
 - World Partition
-- Lumen / Nanite / Virtual Shadow Maps
-- Git LFS para assets binários
+- HLOD
+- Lumen
+- Nanite
+- Virtual Shadow Maps
+- Git LFS
 
 ## Estado atual — v0.1
 
@@ -26,21 +53,19 @@ Já versionado:
 - GameMode;
 - configurações base;
 - Git LFS;
-- regras para agentes;
+- regras dos agentes;
 - world design;
+- level design;
 - roadmap;
-- referências de skills UE5/MCP.
+- referências de skills UE5/MCP;
+- validação estática por GitHub Actions.
 
-Ainda **não** foi validado dentro do Unreal Editor neste repositório novo.
+Ainda não houve validação do projeto novo dentro do Unreal Editor.
 
-## Próxima etapa
+## Primeiro grande marco
 
-Criar e validar o primeiro mapa World Partition e o vertical slice:
+Criar o **Setor Sul** como vertical slice de qualidade final:
 
-**praia inicial -> floresta -> rio -> cachoeira -> mirante da montanha central**
+**praia -> mata costeira -> riacho -> floresta densa -> rio -> cachoeira -> subida rochosa -> mirante da montanha**
 
-## Skills de IA
-
-Veja `Docs/AI_SKILLS.md`.
-
-No Windows, o script `Tools/Install-UESkills.ps1` prepara as referências externas e instala o pacote MCP que oferece instalador oficial via `npx skills`.
+Esse setor definirá o padrão de densidade e acabamento do restante dos 20 km².
