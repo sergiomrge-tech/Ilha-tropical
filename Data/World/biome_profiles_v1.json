@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "engine_target": "5.8.3",
+  "biomes": [
+    {
+      "id": "beach",
+      "display_name": "Praia Tropical",
+      "elevation_m": [-3, 18],
+      "slope_deg": [0, 18],
+      "canopy_density": 0.08,
+      "understory_density": 0.25,
+      "groundcover_density": 0.45,
+      "rock_density": 0.35,
+      "wet": false
+    },
+    {
+      "id": "coastal_forest",
+      "display_name": "Mata Costeira",
+      "elevation_m": [8, 180],
+      "slope_deg": [0, 34],
+      "canopy_density": 0.92,
+      "understory_density": 1.0,
+      "groundcover_density": 1.0,
+      "rock_density": 0.28,
+      "wet": true
+    },
+    {
+      "id": "deep_jungle",
+      "display_name": "Selva Profunda",
+      "elevation_m": [90, 520],
+      "slope_deg": [0, 42],
+      "canopy_density": 1.0,
+      "understory_density": 1.0,
+      "groundcover_density": 0.95,
+      "rock_density": 0.4,
+      "wet": true
+    },
+    {
+      "id": "river_corridor",
+      "display_name": "Corredor de Rio",
+      "elevation_m": [5, 680],
+      "slope_deg": [0, 35],
+      "canopy_density": 0.72,
+      "understory_density": 0.9,
+      "groundcover_density": 1.0,
+      "rock_density": 0.65,
+      "wet": true
+    },
+    {
+      "id": "mangrove",
+      "display_name": "Manguezal",
+      "elevation_m": [-2, 12],
+      "slope_deg": [0, 10],
+      "canopy_density": 0.75,
+      "understory_density": 0.8,
+      "groundcover_density": 0.72,
+      "rock_density": 0.08,
+      "wet": true
+    },
+    {
+      "id": "rocky_slope",
+      "display_name": "Encosta Rochosa",
+      "elevation_m": [180, 900],
+      "slope_deg": [28, 70],
+      "canopy_density": 0.28,
+      "understory_density": 0.4,
+      "groundcover_density": 0.38,
+      "rock_density": 1.0,
+      "wet": false
+    },
+    {
+      "id": "highland",
+      "display_name": "Altitude Tropical",
+      "elevation_m": [650, 980],
+      "slope_deg": [0, 48],
+      "canopy_density": 0.22,
+      "understory_density": 0.55,
+      "groundcover_density": 0.75,
+      "rock_density": 0.82,
+      "wet": true
+    },
+    {
+      "id": "summit",
+      "display_name": "Cume",
+      "elevation_m": [930, 1220],
+      "slope_deg": [0, 72],
+      "canopy_density": 0.02,
+      "understory_density": 0.15,
+      "groundcover_density": 0.32,
+      "rock_density": 1.0,
+      "wet": false
+    }
+  ]
+}
