@@ -1,6 +1,6 @@
 param(
     [string]$EngineRoot = "",
-    [ValidateSet("DebugGame","Development","Shipping")]
+    [ValidateSet("DebugGame","Development")]
     [string]$Configuration = "Development"
 )
 
