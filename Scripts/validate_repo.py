@@ -45,6 +45,8 @@ REQUIRED_FILES = [
     "Data/World/island_sectors_v1.json",
     "Data/World/biome_profiles_v1.json",
     "Data/World/world_partition_v1.json",
+    "Data/World/terrain_build_manifest_v3.json",
+    "Data/World/south_vertical_slice_v1.json",
     "Docs/WORLD_PARTITION_PLAN.md",
     "Docs/VERTICAL_SLICE_SOUTH.md",
     "Docs/LOCAL_SETUP.md",
@@ -214,6 +216,29 @@ def main() -> int:
     if int(grid.get("cell_size_m", 0)) <= 0 or int(grid.get("loading_range_m", 0)) <= 0:
         fail("World Partition cell/loading range invalidos")
     ok("Landscape 32x32 / 4033 / 154.324 cm e World Partition baseline validados")
+
+    manifest = load_json("Data/World/terrain_build_manifest_v3.json")
+    if manifest.get("terrain_version") != "v3":
+        fail("Terrain build manifest precisa apontar para v3")
+    if int(manifest.get("generator_algorithm_version", 0)) != 3:
+        fail("Terrain build manifest com algorithm version incorreta")
+    if int(manifest.get("resolution", 0)) != 4033:
+        fail("Terrain build manifest com resolucao incorreta")
+    if abs(float(manifest.get("estimated_land_area_km2", 0.0)) - 20.0) > 0.01:
+        fail("Terrain build manifest precisa comprovar ~20 km2 emergidos")
+    expected_r16_sha = "569b34be71692ddee7853554e16a24364714c785e427e2f61124e4cbcd7f8bdf"
+    if manifest.get("outputs", {}).get("r16", {}).get("sha256") != expected_r16_sha:
+        fail("Terrain v3 R16 hash divergiu do build verificado")
+    ok("Terrain v3 manifest e hash oficial conferidos")
+
+    south = load_json("Data/World/south_vertical_slice_v1.json")
+    route = south.get("route", [])
+    expected_ids = [f"VS{i:02d}" for i in range(1, 9)]
+    if [point.get("id") for point in route] != expected_ids:
+        fail("Vertical slice precisa preservar sequencia VS01-VS08")
+    if south.get("terrain_version") != "v3":
+        fail("Vertical slice precisa estar calibrado para terrain v3")
+    ok("Vertical slice estruturado VS01-VS08 validado")
 
     print("\nVALIDATION OK")
     return 0
