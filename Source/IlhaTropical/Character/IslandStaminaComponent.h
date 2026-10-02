@@ -40,10 +40,14 @@ protected:
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stamina", meta=(ClampMin="0.0"))
     float RegenDelay = 1.15f;
 
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Stamina", meta=(ClampMin="1.0"))
+    float SprintRestartThreshold = 20.0f;
+
 private:
     UPROPERTY(VisibleInstanceOnly, Category="Stamina")
     float CurrentStamina = 100.0f;
 
     bool bSprinting = false;
+    bool bExhausted = false;
     float TimeSinceDrain = 0.0f;
 };
