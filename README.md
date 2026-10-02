@@ -4,7 +4,7 @@ Jogo de exploração em terceira pessoa para **PC**, desenvolvido para **Unreal 
 
 ## Conceito
 
-Mundo aberto em uma ilha tropical deserta de aproximadamente **20 km²**, extremamente rica em vegetação, relevo e exploração.
+Mundo aberto em uma ilha tropical deserta com aproximadamente **20 km² de área emersa**, extremamente rica em vegetação, relevo e exploração.
 
 Uma grande montanha central domina a paisagem e funciona como referência visual global.
 
