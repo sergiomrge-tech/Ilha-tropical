@@ -4,8 +4,9 @@
 - Plataforma principal: PC.
 - Perspectiva: terceira pessoa.
 - Mundo aberto com World Partition.
-- Área alvo: aproximadamente 20 km².
-- Dimensão de referência: cerca de 4,47 km x 4,47 km antes dos recortes orgânicos da costa.
+- Área emersa alvo: aproximadamente 20 km².
+- Landscape de referência: cerca de 6,22 km x 6,22 km, incluindo o oceano ao redor da ilha.
+- Os 20 km² são de terra emersa aproximada; o quadrado completo do Landscape é maior para acomodar a costa irregular.
 - Direção visual: ilha tropical exuberante, densa, úmida e com relevo forte.
 
 ## Princípio central
