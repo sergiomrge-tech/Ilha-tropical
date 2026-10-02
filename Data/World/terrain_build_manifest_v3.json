@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "terrain_version": "v3",
+  "engine_target": "5.8.3",
+  "generator_commit": "6ef0eb1ddca71a5c9e67373b49b9be2c3d8638c0",
+  "generator_algorithm_version": 3,
+  "resolution": 4033,
+  "target_land_area_km2": 20,
+  "estimated_land_area_km2": 20.000584028699503,
+  "nominal_landscape_width_m": 6222.345,
+  "xy_scale_cm": 154.324,
+  "z_scale": 500,
+  "seed": 583,
+  "outputs": {
+    "r16": {
+      "filename": "island_v1.r16",
+      "bytes": 32530178,
+      "sha256": "569b34be71692ddee7853554e16a24364714c785e427e2f61124e4cbcd7f8bdf"
+    },
+    "metadata": {
+      "filename": "island_v1.meta.json",
+      "bytes": 848,
+      "sha256": "815109217ce1e263647b12b82568a03d18688e5ba5753eeffdfef47af051d4d8"
+    },
+    "preview": {
+      "filename": "island_v1_preview.pgm",
+      "bytes": 32530197,
+      "sha256": "6c60bbe7d1a4097df6c55d3ec387cd27ed0f60dfd00b56ac0dcb969ec6d6e9aa"
+    },
+    "github_actions_zip": {
+      "artifact_id": 11235625060,
+      "sha256": "834924688f9fb2c3076405532cb90293c084ecae572c248712529101d8451ec9",
+      "note": "Artifact is temporary; source generator and hashes are the durable reference."
+    }
+  }
+}
