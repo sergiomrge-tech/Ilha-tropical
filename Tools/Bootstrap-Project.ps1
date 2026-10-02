@@ -42,7 +42,7 @@ $UBT = Join-Path $ResolvedEngine "Engine\Binaries\DotNET\UnrealBuildTool\UnrealB
 if (!(Test-Path $UBT)) { throw "UnrealBuildTool nao encontrado: $UBT" }
 
 Write-Host "Gerando arquivos de projeto..."
-& $UBT -projectfiles -project="$ProjectFile" -game -rocket -progress
+& $UBT -projectfiles -project="$ProjectFile" -game -progress
 if ($LASTEXITCODE -ne 0) { throw "Geracao dos arquivos de projeto falhou." }
 
 Write-Host ""
