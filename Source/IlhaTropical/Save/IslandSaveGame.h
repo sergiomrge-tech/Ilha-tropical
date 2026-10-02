@@ -20,5 +20,5 @@ public:
     FName CurrentRegionId = NAME_None;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Save")
-    float TotalPlaySeconds = 0.0f;
+    float SessionPlaySecondsAtSave = 0.0f;
 };
