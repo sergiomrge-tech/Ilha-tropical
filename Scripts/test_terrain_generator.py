@@ -38,6 +38,10 @@ def main() -> int:
         data = json.loads(meta.read_text(encoding="utf-8"))
         if data["engine_target"] != "5.8.3":
             raise SystemExit("Engine target mismatch")
+        if data["algorithm_version"] != 3:
+            raise SystemExit("Terrain algorithm version mismatch")
+        if not 18.0 <= data["estimated_land_area_km2"] <= 22.0:
+            raise SystemExit(f"Unexpected emerged land area: {data['estimated_land_area_km2']}")
         if data["max_height_m"] < 800.0:
             raise SystemExit(f"Mountain too low: {data['max_height_m']}")
         if data["min_height_m"] > -5.0:
