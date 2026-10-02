@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "engine_target": "5.8.3",
   "landscape": {
     "resolution_vertices": 4033,
@@ -9,9 +9,11 @@
     "component_size_quads": 126,
     "components_x": 32,
     "components_y": 32,
-    "xy_scale_cm": 110.916,
-    "z_scale": 500.0,
-    "nominal_world_size_m": 4472.14
+    "xy_scale_cm": 154.324,
+    "z_scale": 500,
+    "nominal_world_size_m": 6222.345,
+    "bounding_area_km2": 38.7176,
+    "target_emerged_land_area_km2": 20
   },
   "world_partition": {
     "runtime_grid_name": "MainGrid",
