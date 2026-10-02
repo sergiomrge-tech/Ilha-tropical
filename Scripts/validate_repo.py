@@ -41,6 +41,14 @@ REQUIRED_FILES = [
     "Data/World/island_terrain_v1.json",
     "Data/World/island_sectors_v1.json",
     "Data/World/biome_profiles_v1.json",
+    "Data/World/world_partition_v1.json",
+    "Docs/WORLD_PARTITION_PLAN.md",
+    "Docs/VERTICAL_SLICE_SOUTH.md",
+    "Docs/LOCAL_SETUP.md",
+    "Tools/Resolve-UE583.ps1",
+    "Tools/Bootstrap-Project.ps1",
+    "Tools/Build-Editor.ps1",
+    "Tools/Open-Editor.ps1",
     "Scripts/terrain/generate_island_heightmap.py",
 ]
 
@@ -162,6 +170,31 @@ def main() -> int:
     if len(biome_ids) != len(set(biome_ids)):
         fail("Biome IDs duplicados")
     ok(f"{len(biome_entries)} perfis de bioma validos")
+
+    partition = load_json("Data/World/world_partition_v1.json")
+    landscape = partition.get("landscape", {})
+    expected_quads = (
+        int(landscape.get("section_size_quads", 0))
+        * int(landscape.get("sections_per_component", 0))
+        * int(landscape.get("components_x", 0))
+    )
+    if expected_quads != 4032:
+        fail(f"Landscape X precisa fechar 4032 quads, atual={expected_quads}")
+    expected_quads_y = (
+        int(landscape.get("section_size_quads", 0))
+        * int(landscape.get("sections_per_component", 0))
+        * int(landscape.get("components_y", 0))
+    )
+    if expected_quads_y != 4032:
+        fail(f"Landscape Y precisa fechar 4032 quads, atual={expected_quads_y}")
+    if int(landscape.get("resolution_vertices", 0)) != expected_quads + 1:
+        fail("Landscape resolution nao fecha quads + 1")
+    if partition.get("engine_target") != "5.8.3":
+        fail("World Partition spec precisa usar UE 5.8.3")
+    grid = partition.get("world_partition", {})
+    if int(grid.get("cell_size_m", 0)) <= 0 or int(grid.get("loading_range_m", 0)) <= 0:
+        fail("World Partition cell/loading range invalidos")
+    ok("Landscape 32x32 / 4033 e World Partition baseline validados")
 
     print("\nVALIDATION OK")
     return 0
