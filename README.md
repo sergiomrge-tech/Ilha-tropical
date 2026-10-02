@@ -1,6 +1,6 @@
 # Ilha Tropical
 
-Jogo de exploração em terceira pessoa para **PC**, desenvolvido em Unreal Engine 5.8 e versionado pelo GitHub.
+Jogo de exploração em terceira pessoa para **PC**, desenvolvido para **Unreal Engine 5.8.3** e versionado pelo GitHub.
 
 ## Conceito
 
@@ -10,7 +10,7 @@ Uma grande montanha central domina a paisagem e funciona como referência visual
 
 ## Direção do mundo
 
-O objetivo não é criar apenas um terreno grande. A ilha será construída com level design detalhado:
+A ilha será construída com level design detalhado:
 
 - praias irregulares;
 - selva densa;
@@ -27,11 +27,11 @@ O objetivo não é criar apenas um terreno grande. A ilha será construída com 
 - rotas alternativas;
 - pontos de interesse.
 
-PCG será usado para acelerar a vegetação e composição, mas cada região importante receberá passe manual.
+PCG acelera a composição, mas cada região importante recebe passe manual.
 
 ## Base técnica
 
-- Unreal Engine 5.8.x
+- Unreal Engine 5.8.3
 - PC / DirectX 12
 - C++
 - Landscape + Landmass
@@ -44,28 +44,29 @@ PCG será usado para acelerar a vegetação e composição, mas cada região imp
 - Virtual Shadow Maps
 - Git LFS
 
-## Estado atual — v0.1
+## Estado atual
 
 Já versionado:
 - projeto C++;
 - personagem de terceira pessoa;
-- câmera e movimentação inicial;
+- câmera;
+- caminhada e salto;
+- sprint com stamina;
+- agachar;
+- interação por trace;
 - GameMode;
-- configurações base;
+- gerador determinístico de heightmap 4033;
+- especificação do macroterreno;
+- 12 setores de level design;
+- world design e level design;
 - Git LFS;
-- regras dos agentes;
-- world design;
-- level design;
-- roadmap;
-- referências de skills UE5/MCP;
-- validação estática por GitHub Actions.
+- skills UE5/MCP documentadas;
+- validação estática e smoke test do terreno em GitHub Actions.
 
-Ainda não houve validação do projeto novo dentro do Unreal Editor.
+Ainda não houve compilação/validação do projeto novo dentro do Unreal Editor 5.8.3.
 
-## Primeiro grande marco
+## Próximo gate real
 
-Criar o **Setor Sul** como vertical slice de qualidade final:
+Abrir e compilar na UE 5.8.3, importar o macroterreno e validar escala do **Setor Sul**:
 
 **praia -> mata costeira -> riacho -> floresta densa -> rio -> cachoeira -> subida rochosa -> mirante da montanha**
-
-Esse setor definirá o padrão de densidade e acabamento do restante dos 20 km².
