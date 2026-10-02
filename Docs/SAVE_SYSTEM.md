@@ -7,7 +7,7 @@ A fundação de SaveGame é deliberadamente pequena para não congelar decisões
 - SaveVersion
 - PlayerTransform
 - CurrentRegionId
-- TotalPlaySeconds
+- SessionPlaySecondsAtSave (telemetria local da sessão; não é contador acumulado entre sessões)
 
 ## Slot
 `IslandMain`, UserIndex 0.
