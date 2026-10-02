@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "engine_target": "5.8.3",
+  "landscape": {
+    "resolution_vertices": 4033,
+    "quads_total": 4032,
+    "section_size_quads": 63,
+    "sections_per_component": 2,
+    "component_size_quads": 126,
+    "components_x": 32,
+    "components_y": 32,
+    "xy_scale_cm": 110.916,
+    "z_scale": 500.0,
+    "nominal_world_size_m": 4472.14
+  },
+  "world_partition": {
+    "runtime_grid_name": "MainGrid",
+    "cell_size_m": 128,
+    "loading_range_m": 800,
+    "streaming_enabled": true,
+    "one_file_per_actor": true
+  },
+  "hlod": {
+    "required": true,
+    "strategy": "layered",
+    "notes": [
+      "Foliage repetido deve priorizar instancing antes de HLOD.",
+      "Grandes formações rochosas e conjuntos ambientais recebem HLOD conforme profiling.",
+      "Valores finais de HLOD dependem dos assets reais e serão ajustados no Editor."
+    ]
+  }
+}
