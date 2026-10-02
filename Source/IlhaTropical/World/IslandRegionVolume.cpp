@@ -6,8 +6,8 @@ AIslandRegionVolume::AIslandRegionVolume()
 {
     SetActorEnableCollision(true);
 
-    if (UBrushComponent* Brush = GetBrushComponent())
+    if (UBrushComponent* BrushComponent = GetBrushComponent())
     {
-        Brush->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
+        BrushComponent->SetCollisionProfileName(TEXT("OverlapAllDynamic"));
     }
 }
