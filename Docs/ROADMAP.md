@@ -1,42 +1,72 @@
 # Roadmap — Ilha Tropical
 
 ## v0.1 Base técnica
-- Projeto UE 5.8 C++.
+- Projeto UE 5.8 C++ para PC.
 - Personagem em terceira pessoa.
-- Câmera, caminhada, corrida futura e salto.
-- Git LFS para assets binários.
-- Landscape + World Partition planejados.
+- Câmera, movimentação e salto.
+- Git LFS.
 - Landmass, PCG e Water habilitados.
+- World Partition como base do mundo aberto.
+- Direção de level design detalhado documentada.
 
-## v0.2 Ilha procedural base
-- Criar Landscape principal.
-- Definir costa irregular.
-- Erguer montanha central.
-- Criar macrovales e bacias.
-- Oceano ao redor da ilha.
+## v0.2 Macroterreno
+- Criar Landscape principal de aproximadamente 20 km².
+- Costa irregular.
+- Montanha central.
+- Grandes vales, ravinas, platôs e bacias.
+- Falésias e enseadas.
+- Sistema hídrico macro.
+- Validar escala em terceira pessoa antes de detalhar.
 
-## v0.3 Bioma tropical
-- Material de Landscape por altitude/inclinação.
-- PCG de floresta tropical.
-- Pedras, árvores, arbustos e cobertura de solo.
-- Rios e cachoeiras.
-
-## v0.4 Vertical slice jogável
-- Praia inicial.
-- Floresta.
-- Rio.
+## v0.3 Setor Sul — vertical slice
+- Praia inicial detalhada.
+- Floresta costeira densa.
+- Riacho e rio.
+- Travessias naturais.
 - Cachoeira.
-- Mirante.
-- Interações básicas.
-- Primeiro passe de áudio e iluminação.
+- Trilha elevada.
+- Mirante da montanha.
+- Primeiros segredos e rotas secundárias.
 
-## v0.5 Sistemas de jogo
-- Inventário.
+## v0.4 Bioma tropical de produção
+- Material de Landscape por altitude, umidade e inclinação.
+- PCG em camadas.
+- Árvores, palmeiras, arbustos, pedras e cobertura de solo.
+- Variação por região.
+- Foliage manual para composição final.
+- HLOD e otimização.
+
+## v0.5 Exploração
+- Corrida.
+- Agachar.
+- Natação.
+- Interação.
 - Coleta.
-- Sobrevivência.
-- Crafting inicial.
-- Fauna.
+- Inventário inicial.
 - Save/Load.
 
-## Critério de expansão
-Só expandir densidade para toda a ilha depois que o vertical slice atingir qualidade visual, navegação e desempenho aceitáveis.
+## v0.6 Ilha expandida
+Expandir somente depois do Setor Sul atingir o padrão visual e técnico desejado.
+
+Ordem sugerida:
+1. vale interior;
+2. manguezal;
+3. costa oeste;
+4. selva profunda;
+5. falésias norte;
+6. montanha;
+7. cavernas;
+8. ilhotas.
+
+## Critério de qualidade
+Nenhum setor é aprovado apenas por estar preenchido.
+
+Cada setor precisa de:
+- identidade própria;
+- relevo;
+- landmark;
+- rota principal;
+- exploração secundária;
+- composição manual;
+- navegação validada;
+- desempenho aceitável no PC.
