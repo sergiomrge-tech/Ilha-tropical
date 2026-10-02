@@ -158,7 +158,11 @@ def main() -> int:
         fail("Terrain spec precisa usar engine_target 5.8.3")
     if terrain["world"].get("heightmap_resolution") != 4033:
         fail("Terrain spec precisa preservar heightmap 4033")
-    ok("Terrain spec validado")
+    if abs(float(terrain["world"].get("target_land_area_km2", 0.0)) - 20.0) > 0.001:
+        fail("Terrain spec precisa definir 20 km2 de area emersa")
+    if int(terrain.get("generator_algorithm_version", 0)) != 3:
+        fail("Terrain spec precisa usar generator_algorithm_version 3")
+    ok("Terrain spec validado com 20 km2 de terra emersa")
 
     sectors = load_json("Data/World/island_sectors_v1.json")
     entries = sectors.get("sectors", [])
@@ -202,10 +206,14 @@ def main() -> int:
         fail("Landscape resolution nao fecha quads + 1")
     if partition.get("engine_target") != "5.8.3":
         fail("World Partition spec precisa usar UE 5.8.3")
+    if abs(float(landscape.get("xy_scale_cm", 0.0)) - 154.324) > 0.01:
+        fail("XY Scale precisa permanecer 154.324 cm para ~20 km2 emergidos")
+    if abs(float(landscape.get("target_emerged_land_area_km2", 0.0)) - 20.0) > 0.001:
+        fail("World Partition spec precisa manter alvo de 20 km2 emergidos")
     grid = partition.get("world_partition", {})
     if int(grid.get("cell_size_m", 0)) <= 0 or int(grid.get("loading_range_m", 0)) <= 0:
         fail("World Partition cell/loading range invalidos")
-    ok("Landscape 32x32 / 4033 e World Partition baseline validados")
+    ok("Landscape 32x32 / 4033 / 154.324 cm e World Partition baseline validados")
 
     print("\nVALIDATION OK")
     return 0
