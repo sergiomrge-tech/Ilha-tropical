@@ -8,7 +8,7 @@ Transformar a base textual/versionavel em um projeto real validado no Unreal Edi
 - CI verde;
 - UE 5.8.3 confirmada por Engine/Build/Build.version;
 - Visual Studio toolchain funcional;
-- terrain artifact 4033 ou heightmap gerado localmente.
+- terrain artifact 4033 da versão v3 ou heightmap gerado localmente.
 
 ## Sequencia
 
@@ -36,10 +36,10 @@ Gate: projeto abre sem missing module/plugin obrigatorio.
 - 63 quads/section;
 - 2x2 sections/component;
 - 32x32 components;
-- XY Scale 110.916;
+- XY Scale 154.324;
 - Z Scale 500.
 
-Gate: tamanho medido proximo a 4.472 km por lado.
+Gate: tamanho medido proximo a 6.222 km por lado e área emersa aproximada de 20 km².
 
 ### 6. Water baseline
 - WaterBodyOcean em torno de Z=0;
