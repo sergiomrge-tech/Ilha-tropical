@@ -25,14 +25,22 @@ REQUIRED_FILES = [
     "Source/IlhaTropical/Interaction/IslandInteractionComponent.cpp",
     "Source/IlhaTropical/Game/IslandGameMode.h",
     "Source/IlhaTropical/Game/IslandGameMode.cpp",
+    "Source/IlhaTropical/World/IslandBiomeDataAsset.h",
+    "Source/IlhaTropical/World/IslandRegionVolume.h",
+    "Source/IlhaTropical/World/IslandRegionVolume.cpp",
     "Docs/ENGINE_BASELINE.md",
+    "Docs/TECHNICAL_ARCHITECTURE.md",
+    "Docs/CONTENT_STRUCTURE.md",
     "Docs/WORLD_DESIGN.md",
     "Docs/LEVEL_DESIGN.md",
     "Docs/TERRAIN_PIPELINE.md",
+    "Docs/PCG_PLAN.md",
+    "Docs/PERFORMANCE_BUDGET.md",
     "Docs/ROADMAP.md",
     "Docs/AI_SKILLS.md",
     "Data/World/island_terrain_v1.json",
     "Data/World/island_sectors_v1.json",
+    "Data/World/biome_profiles_v1.json",
     "Scripts/terrain/generate_island_heightmap.py",
 ]
 
@@ -141,7 +149,19 @@ def main() -> int:
         for key in ("id", "name", "landmark", "primary_route", "secondary_routes", "pois"):
             if not sector.get(key):
                 fail(f"Setor {sector.get('id', '?')} sem {key}")
-    ok(f"{len(entries)} setores de level design possuem rotas, landmarks e POIs")
+    total_area = sum(float(sector.get("area_km2", 0.0)) for sector in entries)
+    if abs(total_area - 20.0) > 0.001:
+        fail(f"Areas dos setores precisam somar 20.0 km2, atual={total_area:.3f}")
+    ok(f"{len(entries)} setores completos somam {total_area:.1f} km2")
+
+    biomes = load_json("Data/World/biome_profiles_v1.json")
+    biome_entries = biomes.get("biomes", [])
+    if len(biome_entries) < 6:
+        fail("Biomas insuficientes para variedade da ilha")
+    biome_ids = [b.get("id") for b in biome_entries]
+    if len(biome_ids) != len(set(biome_ids)):
+        fail("Biome IDs duplicados")
+    ok(f"{len(biome_entries)} perfis de bioma validos")
 
     print("\nVALIDATION OK")
     return 0
