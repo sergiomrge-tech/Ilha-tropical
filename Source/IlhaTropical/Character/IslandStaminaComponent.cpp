@@ -25,7 +25,9 @@ void UIslandStaminaComponent::TickComponent(
 
         if (CurrentStamina <= KINDA_SMALL_NUMBER)
         {
+            CurrentStamina = 0.0f;
             bSprinting = false;
+            bExhausted = true;
         }
         return;
     }
@@ -34,6 +36,11 @@ void UIslandStaminaComponent::TickComponent(
     if (TimeSinceDrain >= RegenDelay && CurrentStamina < MaxStamina)
     {
         CurrentStamina = FMath::Min(MaxStamina, CurrentStamina + RegenPerSecond * DeltaTime);
+
+        if (bExhausted && CurrentStamina >= FMath::Min(SprintRestartThreshold, MaxStamina))
+        {
+            bExhausted = false;
+        }
     }
 }
 
@@ -48,7 +55,7 @@ void UIslandStaminaComponent::SetSprinting(bool bNewSprinting)
 
 bool UIslandStaminaComponent::CanSprint() const
 {
-    return CurrentStamina > 1.0f;
+    return !bExhausted && CurrentStamina > 1.0f;
 }
 
 float UIslandStaminaComponent::GetStaminaNormalized() const
