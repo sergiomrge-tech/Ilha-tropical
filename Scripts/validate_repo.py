@@ -25,6 +25,9 @@ REQUIRED_FILES = [
     "Source/IlhaTropical/Interaction/IslandInteractionComponent.cpp",
     "Source/IlhaTropical/Game/IslandGameMode.h",
     "Source/IlhaTropical/Game/IslandGameMode.cpp",
+    "Source/IlhaTropical/Save/IslandSaveGame.h",
+    "Source/IlhaTropical/Save/IslandSaveSubsystem.h",
+    "Source/IlhaTropical/Save/IslandSaveSubsystem.cpp",
     "Source/IlhaTropical/World/IslandBiomeDataAsset.h",
     "Source/IlhaTropical/World/IslandRegionVolume.h",
     "Source/IlhaTropical/World/IslandRegionVolume.cpp",
@@ -45,6 +48,8 @@ REQUIRED_FILES = [
     "Docs/WORLD_PARTITION_PLAN.md",
     "Docs/VERTICAL_SLICE_SOUTH.md",
     "Docs/LOCAL_SETUP.md",
+    "Docs/EDITOR_GATE_01.md",
+    "Docs/SAVE_SYSTEM.md",
     "Tools/Resolve-UE583.ps1",
     "Tools/Bootstrap-Project.ps1",
     "Tools/Build-Editor.ps1",
@@ -135,6 +140,12 @@ def main() -> int:
         if marker not in character_cpp:
             fail(f"Personagem base sem marcador esperado: {marker}")
     ok("Exploracao base: camera, sprint, crouch, stamina e interacao")
+
+    save_cpp = (ROOT / "Source/IlhaTropical/Save/IslandSaveSubsystem.cpp").read_text(encoding="utf-8-sig")
+    for marker in ("SaveGameToSlot", "LoadGameFromSlot", "DoesSaveGameExist", "DeleteGameInSlot"):
+        if marker not in save_cpp:
+            fail(f"Save subsystem sem operacao esperada: {marker}")
+    ok("Save/Load foundation conferida")
 
     world_design = (ROOT / "Docs/WORLD_DESIGN.md").read_text(encoding="utf-8-sig")
     for marker in ("20 km", "montanha central", "World Partition", "PCG", "relevo"):
