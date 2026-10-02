@@ -4,12 +4,14 @@
 Gerar uma base determinística para a ilha de aproximadamente 20 km² antes do passe manual na Unreal Engine 5.8.3.
 
 ## Resolução
+- Área emersa alvo: ~20 km²
+- Área do quadrado do Landscape: ~38,72 km²
 - Heightmap: 4033 x 4033
 - Quads: 4032
-- Largura nominal: 4472,14 m
-- XY Scale sugerido: 110,916 cm
+- Largura nominal do Landscape: 6222,345 m
+- XY Scale sugerido: 154,324 cm
 - Z Scale inicial: 500
-- Pico alvo: ~1120 m
+- Pico alvo: ~1100 m
 
 ## Geração
 
@@ -30,7 +32,7 @@ Saídas locais:
 2. Landscape Mode -> Import from File.
 3. Selecionar `island_v1.r16`.
 4. Usar resolução 4033.
-5. XY Scale inicial: 110,916.
+5. XY Scale inicial: 154,324.
 6. Z Scale inicial: 500.
 7. Posicionar WaterBodyOcean com superfície próxima de Z=0.
 8. Validar a escala com o personagem antes de qualquer detalhamento.
