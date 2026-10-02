@@ -19,5 +19,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install terrain test dependency
+        run: python -m pip install numpy
+
       - name: Validate Unreal repository structure
         run: python Scripts/validate_repo.py
+
+      - name: Smoke test deterministic terrain generator
+        run: python Scripts/test_terrain_generator.py
