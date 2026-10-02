@@ -1,16 +1,18 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "engine_target": "5.8.3",
   "world": {
     "target_area_km2": 20,
-    "nominal_width_m": 4472.14,
-    "nominal_length_m": 4472.14,
+    "nominal_width_m": 6222.345,
+    "nominal_length_m": 6222.345,
     "heightmap_resolution": 4033,
     "landscape_quads": 4032,
-    "xy_scale_cm": 110.916,
+    "xy_scale_cm": 154.324,
     "z_scale": 500,
     "sea_level_m": 0,
-    "mountain_target_m": 1100
+    "mountain_target_m": 1100,
+    "target_land_area_km2": 20,
+    "bounding_landscape_area_km2": 38.7176
   },
   "landscape": {
     "world_partition": true,
@@ -75,10 +77,12 @@
       "priority": 6
     }
   ],
-  "generator_algorithm_version": 2,
+  "generator_algorithm_version": 3,
   "design_notes": [
+    "Os 20 km2 referem-se a area emersa aproximada, nao ao quadrado completo do Landscape.",
+    "Landscape de ~6,22 km por lado deixa margem de oceano ao redor da costa irregular.",
     "Costa propositalmente assimetrica com enseadas e peninsulas.",
-    "Maciço central multi-pico para evitar leitura radial/volcanica simples.",
+    "Macico central multi-pico para evitar leitura radial/volcanica simples.",
     "Rios base usam corredores curvos e serao refinados por Water splines.",
     "Heightmap e macro-base; level design final exige passe manual."
   ]
